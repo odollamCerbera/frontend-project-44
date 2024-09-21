@@ -1,12 +1,12 @@
 import { askUserName } from "../src/cli.js";
-import { correctAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer } from "../src/index.js";
+import { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer } from "../src/index.js";
 
 export const brainCalc = () => {
     const userName = askUserName();
     console.log('What is the result of the expression?');
 
     let currentCorrectAnswers = 0;
-    while(currentCorrectAnswers < correctAnswers) {
+    while(currentCorrectAnswers < countCorrectAnswers) {
         const randomNumber1 = makeRandomNumber(101);
         const randomNumber2 = makeRandomNumber(11);
         const randomSymbol = symbols[getRandomIndex(symbols)];
@@ -19,8 +19,7 @@ export const brainCalc = () => {
         const correctAnswer = eval(expression);
     
         if (Number(userAnswer) !== correctAnswer) {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-            console.log(`Let's try again, ${userName}!`);
+            getIncorrectMassage(userAnswer, correctAnswer, userName);
             return;
         }
         console.log('Correct!');

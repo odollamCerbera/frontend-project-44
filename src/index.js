@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const correctAnswers = 3;
+const countCorrectAnswers = 3;
 const symbols = ['+', '-', '*'];
 
 const makeRandomNumber = (max) => {
@@ -20,4 +20,19 @@ const getAnswer = () => {
     return answerUser;
 };
 
-export { correctAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer }; 
+const getIncorrectMassage = (userAnswer, correctAnswer, userName) => {
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    console.log(`Let's try again, ${userName}!`);
+};
+
+const getNOD = (number1, number2) => {
+    if (number2 > number1) {
+        return getNOD(number2, number1);
+    }
+	if (number1 % number2 === 0) {
+        return number2;
+    }
+	return getNOD(number2, number1 % number2);
+};
+
+export { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage, getNOD }; 
