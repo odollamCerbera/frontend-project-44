@@ -1,7 +1,14 @@
 import readlineSync from 'readline-sync';
 
-const makeRandomNumber = () => {
-    return Math.floor(Math.random() * 100);
+const correctAnswers = 3;
+const symbols = ['+', '-', '*'];
+
+const makeRandomNumber = (max) => {
+    return Math.floor(Math.random() * max);
+};
+
+const getRandomIndex = (array) => {
+    return Math.floor(Math.random() * array.length);
 };
 
 const askQuestion = (expression) => {
@@ -13,4 +20,4 @@ const getAnswer = () => {
     return answerUser;
 };
 
-export { makeRandomNumber, askQuestion, getAnswer }; 
+export { correctAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer }; 
