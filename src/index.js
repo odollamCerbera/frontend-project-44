@@ -3,8 +3,8 @@ import readlineSync from 'readline-sync';
 const countCorrectAnswers = 3;
 const symbols = ['+', '-', '*'];
 
-const makeRandomNumber = (max) => {
-    return Math.floor(Math.random() * max);
+const makeRandomNumber = (max, min = 0) => {
+    return Math.floor(Math.random() * (max - min) + min);
 };
 
 const getRandomIndex = (array) => {
@@ -35,4 +35,18 @@ const getNOD = (number1, number2) => {
 	return getNOD(number2, number1 % number2);
 };
 
-export { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage, getNOD }; 
+const getDataProgression = (beginProgression, stepProgression, minLengthProgression) => {
+    const progression = [beginProgression];
+    
+    for (let i = 0; i < minLengthProgression; i+= 1) {
+      progression.push(progression[i] + stepProgression);
+    }
+
+    const hiddenIndex = getRandomIndex(progression);
+    const correctAnswer = progression[hiddenIndex];
+    progression[hiddenIndex] = '..';
+   
+    return [progression.join(' '), correctAnswer];
+};
+
+export { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage, getNOD, getDataProgression }; 

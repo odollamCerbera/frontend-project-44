@@ -7,8 +7,8 @@ export const brainGcd = () => {
 
     let currentCorrectAnswers = 0;
     while(currentCorrectAnswers < countCorrectAnswers) {
-        const randomNumber1 = makeRandomNumber(101);
-        const randomNumber2 = makeRandomNumber(101);
+        const randomNumber1 = makeRandomNumber(101, 1);
+        const randomNumber2 = makeRandomNumber(101, 1);
         const expression = `${randomNumber1} ${randomNumber2}`; 
 
         askQuestion(expression);

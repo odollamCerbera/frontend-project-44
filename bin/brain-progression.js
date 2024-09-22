@@ -1,6 +1,4 @@
 #!/usr/bin/env node
+import { brainProgression } from "../games/progression.js";
 
-import { askUserName } from "../src/cli.js";
-
-askUserName();
-console.log('What number is missing in the progression?');
+brainProgression();
