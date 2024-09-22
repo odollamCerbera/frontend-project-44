@@ -32,13 +32,14 @@ const getNOD = (number1, number2) => {
 	if (number1 % number2 === 0) {
         return number2;
     }
+
 	return getNOD(number2, number1 % number2);
 };
 
 const getDataProgression = (beginProgression, stepProgression, minLengthProgression) => {
     const progression = [beginProgression];
     
-    for (let i = 0; i < minLengthProgression; i+= 1) {
+    for (let i = 0; i < minLengthProgression; i += 1) {
       progression.push(progression[i] + stepProgression);
     }
 
@@ -49,4 +50,18 @@ const getDataProgression = (beginProgression, stepProgression, minLengthProgress
     return [progression.join(' '), correctAnswer];
 };
 
-export { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage, getNOD, getDataProgression }; 
+const checkIsPrime = (expression) => {
+    if (expression <= 1) {
+      return 'no';
+    }
+    
+    for (let divider = 2; divider <= Math.sqrt(expression); divider += 1) {
+      if (expression % divider === 0) {
+        return 'no';
+      }
+    }
+
+    return 'yes';
+};
+
+export { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage, getNOD, getDataProgression, checkIsPrime }; 
