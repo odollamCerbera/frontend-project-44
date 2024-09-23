@@ -1,5 +1,7 @@
 import { askUserName } from "../src/cli.js";
-import { countCorrectAnswers, symbols, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage } from "../src/index.js";
+import { countCorrectAnswers, makeRandomNumber, getRandomIndex, askQuestion, getAnswer, getIncorrectMassage } from "../src/index.js";
+
+const symbols = ['+', '-', '*'];
 
 export const brainCalc = () => {
     const userName = askUserName();
