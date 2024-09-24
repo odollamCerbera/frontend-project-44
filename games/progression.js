@@ -8,6 +8,8 @@ import {
   getIncorrectMassage,
 } from '../src/index.js';
 
+const brainProgressionRules = 'What number is missing in the progression?';
+
 const lengthProgression = 9;
 
 const getDataProgression = (begin, step, length) => {
@@ -26,7 +28,7 @@ const getDataProgression = (begin, step, length) => {
 
 const brainProgression = () => {
   const userName = askUserName();
-  console.log('What number is missing in the progression?');
+  console.log(brainProgressionRules);
 
   let currentCorrectAnswers = 0;
   while (currentCorrectAnswers < countCorrectAnswers) {

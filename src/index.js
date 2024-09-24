@@ -6,9 +6,7 @@ export const makeRandomNumber = (max, min = 0) => Math.floor(Math.random() * (ma
 
 export const getRandomIndex = (array) => Math.floor(Math.random() * array.length);
 
-export const askQuestion = (expression) => {
-  console.log(`Question: ${expression}`);
-};
+export const askQuestion = (expression) => (console.log(`Question: ${expression}`));
 
 export const getAnswer = () => {
   const answerUser = readlineSync.question('Your answer: ');

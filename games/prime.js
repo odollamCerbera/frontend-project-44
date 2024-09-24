@@ -1,7 +1,13 @@
 import askUserName from '../src/cli.js';
 import {
-  countCorrectAnswers, makeRandomNumber, askQuestion, getAnswer, getIncorrectMassage,
+  countCorrectAnswers,
+  makeRandomNumber,
+  askQuestion,
+  getAnswer,
+  getIncorrectMassage,
 } from '../src/index.js';
+
+const brainPrimeRules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const checkIsPrime = (number) => {
   if (number <= 1) {
@@ -19,7 +25,7 @@ const checkIsPrime = (number) => {
 
 const brainPrime = () => {
   const userName = askUserName();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  console.log(brainPrimeRules);
 
   let currentCorrectAnswers = 0;
   while (currentCorrectAnswers < countCorrectAnswers) {

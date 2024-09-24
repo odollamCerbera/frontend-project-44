@@ -7,6 +7,8 @@ import {
   getIncorrectMassage,
 } from '../src/index.js';
 
+const brainGcdRules = 'Find the greatest common divisor of given numbers.';
+
 const getNOD = (number1, number2) => {
   if (number2 > number1) {
     return getNOD(number2, number1);
@@ -20,7 +22,7 @@ const getNOD = (number1, number2) => {
 
 const brainGcd = () => {
   const userName = askUserName();
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log(brainGcdRules);
 
   let currentCorrectAnswers = 0;
   while (currentCorrectAnswers < countCorrectAnswers) {

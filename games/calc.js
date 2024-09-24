@@ -8,6 +8,8 @@ import {
   getIncorrectMassage,
 } from '../src/index.js';
 
+const brainCalcRules = 'What is the result of the expression?';
+
 const symbols = ['+', '-', '*'];
 
 const getCorrectAnswer = (number1, number2, symbol) => {
@@ -30,7 +32,7 @@ const getCorrectAnswer = (number1, number2, symbol) => {
 
 const brainCalc = () => {
   const userName = askUserName();
-  console.log('What is the result of the expression?');
+  console.log(brainCalcRules);
 
   let currentCorrectAnswers = 0;
   while (currentCorrectAnswers < countCorrectAnswers) {
