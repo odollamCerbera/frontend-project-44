@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/odollamCerbera/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/odollamCerbera/frontend-project-44/actions)
+<a href="https://codeclimate.com/github/odollamCerbera/frontend-project-44/maintainability"><img src="https://api.codeclimate.com/v1/badges/8fe8f881505098145964/maintainability" /></a>
 
 # Проект "Игры разума"
 
@@ -28,5 +29,6 @@
 ## Установка
 После клонирования репозитория необходимо установить все зависимости:
 ```
-npm install
+make install  
+npm link 
 ```
