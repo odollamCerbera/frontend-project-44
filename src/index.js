@@ -1,25 +1,19 @@
 import readlineSync from 'readline-sync';
-import askUserName from './cli.js';
 
 const countGames = 3;
 
-const makeRandomNumber = (max, min = 0) => Math.floor(Math.random() * (max - min) + min);
-
-const getUserAnswer = (expression) => {
-  console.log(`Question: ${expression}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  return userAnswer;
-};
-
 const brainGames = (instruction, getExpression) => {
-  const userName = askUserName();
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(instruction);
 
-  let currentGames = 0;
-  while (currentGames < countGames) {
+  for (let currentGames = 0; currentGames < countGames; currentGames += 1) {
     const [expression, correctAnswer] = getExpression();
 
-    const userAnswer = getUserAnswer(expression);
+    console.log(`Question: ${expression}`);
+
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== String(correctAnswer)) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
@@ -28,10 +22,9 @@ const brainGames = (instruction, getExpression) => {
     }
 
     console.log('Correct!');
-    currentGames += 1;
   }
 
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { makeRandomNumber, brainGames };
+export default brainGames;

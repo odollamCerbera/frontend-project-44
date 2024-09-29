@@ -1,4 +1,5 @@
-import { makeRandomNumber, brainGames } from '../index.js';
+import brainGames from '../index.js';
+import makeRandomNumber from '../utils.js';
 
 const calcInstruction = 'What is the result of the expression?';
 
@@ -17,7 +18,7 @@ const calculateExpression = (number1, number2, symbol) => {
       result = number1 * number2;
       break;
     default:
-      return 'Incorrect expression';
+      throw new Error(`Incorrect expression: '${symbol}'!`);
   }
   return result;
 };
@@ -32,6 +33,4 @@ export const getExpression = () => {
   return [expression, correctAnswer];
 };
 
-const brainCalc = () => (brainGames(calcInstruction, getExpression));
-
-export default brainCalc;
+export default () => (brainGames(calcInstruction, getExpression));

@@ -1,4 +1,5 @@
-import { makeRandomNumber, brainGames } from '../index.js';
+import brainGames from '../index.js';
+import makeRandomNumber from '../utils.js';
 
 const progressionInstruction = 'What number is missing in the progression?';
 
@@ -31,6 +32,4 @@ export const getExpression = () => {
   return [expression, correctAnswer];
 };
 
-const brainProgression = () => (brainGames(progressionInstruction, getExpression));
-
-export default brainProgression;
+export default () => (brainGames(progressionInstruction, getExpression));
